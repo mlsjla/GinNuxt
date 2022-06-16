@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "TAILWIND_MODE=watch nuxi dev --port=3100",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@pinia/nuxt": "^0.1.8",
+    "@vueuse/nuxt": "^8.2.6",
+    "autoprefixer": "^10.4.2",
+    "bootstrap-icons": "^1.8.1",
+    "daisyui": "^2.0.6",
+    "element-plus": "^2.2.5",
+    "eslint": "^8.5.0",
+    "naive-ui": "^2.28.4",
+    "nuxt": "^3.0.0-rc.3",
+    "pinia": "^2.0.11",
+    "pinia-plugin-persistedstate": "^1.6.1",
+    "postcss": "^8.4.6",
+    "sass": "^1.43.4",
+    "tailwindcss": "^3.0.23",
+    "uuidjs": "^4.2.11"
+  },
+  "dependencies": {
+    "@nuxt/schema": "0.1.0-edge",
+    "async-validator": "^4.0.7",
+    "dayjs": "^1.10.7",
+    "isbot": "^3.5.0",
+    "markdown-it": "^13.0.1",
+    "unenv": "^0.4.3",
+    "validator": "^13.7.0",
+    "vditor": "^3.8.15"
+  }
+}

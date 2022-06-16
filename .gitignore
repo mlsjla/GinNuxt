@@ -1,0 +1,15 @@
+*node_modules
+*.log
+*.nuxt
+*nuxt.d.ts
+*.output
+*.env
+*server/uploads
+*server/cmd/data
+*server/cmd/uploads
+/server/cmd/main/*
+!/server/cmd/main/main.go
+
+g.sh
+.*
+*.DS_Store

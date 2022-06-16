@@ -1,0 +1,87 @@
+name: Post
+comment: 文章详情
+fields:
+  - name: UserId
+    type: uint64
+    comment: 发布者ID
+    required: true
+    binding_options: ""
+    gorm_options: "id,string"
+  - name: ThreadId
+    type: uint64
+    comment: 文章ID
+    required: false
+    binding_options: ""
+    gorm_options: "id,string"
+  - name: ReplyPostId
+    type: uint64
+    comment: 回复postID
+    required: false
+    binding_options: ""
+    gorm_options: "id,string;index"
+  - name: ReplyUserId
+    type: uint64
+    comment: 回复userID
+    required: false
+    binding_options: ""
+    gorm_options: "id,string;index"
+  - name: CommentPostId
+    type: uint64
+    comment: 评论postID
+    required: false
+    binding_options: ""
+    gorm_options: "id,string;index"
+  - name: CommentUserId
+    type: uint64
+    comment: 评论userID
+    required: false
+    binding_options: ""
+    gorm_options: "id,string;index"
+  - name: Content
+    type: string
+    comment: 详情
+    required: false
+    binding_options: ""
+    gorm_options: "type:text"
+  - name: Ip
+    type: string
+    comment: 排序
+    required: false
+    binding_options: ""
+    gorm_options: "size:45;index"
+  - name: Port
+    type: int
+    comment: 端口
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: ReplyCount
+    type: uint64
+    comment: 回复数
+    required: false
+    binding_options: ""
+    gorm_options: "index"
+  - name: LikeCount
+    type: uint64
+    comment: 赞数
+    required: false
+    binding_options: ""
+    gorm_options: "index"
+  - name: IsFirst
+    type: int
+    comment: 是否主文章
+    required: false
+    binding_options: ""
+    gorm_options: "type:tinyint(1);"
+  - name: IsComment
+    type: int
+    comment: 是否是回复回帖内容
+    required: false
+    binding_options: ""
+    gorm_options: "type:tinyint(1);"
+  - name: IsApproved
+    type: int
+    comment: 是否合法
+    required: false
+    binding_options: ""
+    gorm_options: "type:tinyint(1);"

@@ -1,0 +1,57 @@
+name: Category
+comment: 文章分类
+fields:
+  - name: Name
+    type: string
+    comment: 分类名称
+    required: true
+    binding_options: ""
+    gorm_options: "size:255;index;"
+  - name: Description
+    type: string
+    comment: 分类描述
+    required: false
+    binding_options: ""
+    gorm_options: "type:text;"
+  - name: Icon
+    type: string
+    comment: 图标
+    required: false
+    binding_options: ""
+    gorm_options: "size:255;"
+  - name: Sort
+    type: int
+    comment: 排序
+    required: false
+    binding_options: ""
+    gorm_options: "index"
+  - name: Property
+    type: int
+    comment: 属性
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: ThreadCount
+    type: uint64
+    comment: 主题数
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: Moderators
+    type: string
+    comment: 排序
+    required: false
+    binding_options: ""
+    gorm_options: "size:255;"
+  - name: Ip
+    type: string
+    comment: 排序
+    required: false
+    binding_options: ""
+    gorm_options: "size:45;"
+  - name: Parentid
+    type: uint64
+    comment: 父ID
+    required: false
+    binding_options: ""
+    gorm_options: ""

@@ -1,0 +1,172 @@
+name: Thread
+comment: 文章
+fields:
+  - name: UserId
+    type: uint64
+    comment: "创建用户 id"
+    required: true
+    binding_options: ""
+    gorm_options: "index"
+  - name: lastPostedUserId
+    type: uint64
+    comment: 最后回复用户
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: CategoryId
+    type: int
+    comment: "分类 id"
+    required: true
+    binding_options: ""
+    gorm_options: ""
+  - name: Type
+    type: int
+    comment: 类型
+    required: true
+    binding_options: ""
+    gorm_options: ""
+  - name: Title
+    type: string
+    comment: 类型
+    required: true
+    binding_options: ""
+    gorm_options: "size:255;index;"
+  - name: Price
+    type: decimal.Decimal
+    comment: 价格
+    required: false
+    binding_options: "type:decimal(10,2)"
+    gorm_options: ""
+  - name: AttachmentPrice
+    type: decimal.Decimal
+    comment: 附件价格
+    required: false
+    binding_options: "type:decimal(10,2)"
+    gorm_options: ""
+  - name: FreeWords
+    type: decimal.Decimal
+    comment: 免费字数百分比
+    required: false
+    binding_options: "type:decimal(5,2)"
+    gorm_options: ""
+  - name: PostCount
+    type: int
+    comment: 回复数
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: ViewCount
+    type: int
+    comment: 查看数
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: RewardedCount
+    type: int
+    comment: 打赏数
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: PaidCount
+    type: int
+    comment: 付费数
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: ShareCount
+    type: int
+    comment: 分享数
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: Longitude
+    type: decimal.Decimal
+    comment: 经度
+    required: false
+    binding_options: "type:decimal(10,7)"
+    gorm_options: ""
+  - name: Latitude
+    type: decimal.Decimal
+    comment: 纬度
+    required: false
+    binding_options: "type:decimal(10,7)"
+    gorm_options: ""
+  - name: Address
+    type: string
+    comment: 地址
+    required: false
+    binding_options: ""
+    gorm_options: "size:128;index;"
+  - name: Location
+    type: string
+    comment: 位置
+    required: false
+    binding_options: ""
+    gorm_options: "size:128;index;"
+  - name: PostedAt
+    type: time.Time
+    comment: 最新评论时间
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IssueAt
+    type: time.Time
+    comment: 审核变更的时间记录
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsApproved
+    type: int
+    comment: 是否合法
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsSticky
+    type: int
+    comment: 是否置顶
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsEssence
+    type: int
+    comment: 是否加精
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsSite
+    type: int
+    comment: 是否推荐到首页
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsAnonymous
+    type: int
+    comment: 是否匿名
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsDisplay
+    type: int
+    comment: 是否显示
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsRedPacket
+    type: int
+    comment: 是否添加红包
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: IsDraft
+    type: int
+    comment: 是否为草稿
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: Source
+    type: int
+    comment: 来源
+    required: false
+    binding_options: ""
+    gorm_options: ""
+    

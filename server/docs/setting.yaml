@@ -1,0 +1,21 @@
+name: Setting
+comment: 系统设置
+fields:
+  - name: Key
+    type: string
+    comment: 设置项key
+    required: true
+    binding_options: ""
+    gorm_options: "size:255"
+  - name: Value
+    type: string
+    comment: 设置项value
+    required: true
+    binding_options: ""
+    gorm_options: "type:text"
+  - name: Tag
+    type: string
+    comment: 设置项tag
+    required: false
+    binding_options: ""
+    gorm_options: "size:255;default:'default'"

@@ -1,0 +1,60 @@
+*{--tw-ring-inset:var(--tw-empty,);/*!*//*!*/--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(14,165,233,0.5);--tw-ring-offset-shadow:0 0 transparent;--tw-ring-shadow:0 0 transparent;--tw-shadow:0 0 transparent;scrollbar-color:auto;scrollbar-width:auto}
+body{line-height:inherit;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji}
+
+.text-display-6 {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+}
+.text-display-5 {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
+.text-display-4 {
+	font-size: 3rem;
+	line-height: 3rem;
+}
+.text-display-3 {
+	font-size: 3.75rem;
+	line-height: 3.75rem;
+}
+.text-display-2 {
+	font-size: 4.5rem;
+	line-height: 4.5rem;
+}
+.text-display-1 {
+	font-size: 6rem;
+	line-height: 6rem;
+}
+
+.text-body-xs {
+	font-size: 0.75rem;
+	line-height: 1rem;
+}
+.text-body-sm {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+}
+.text-body-base {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+.text-body-lg {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+.text-body-xl {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+.text-body-2xl {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+.main-p {
+	@apply pl-5 pr-5 md:pl-10 md:pr-10 lg:pl-20 lg:pr-20 mt-5;
+}
+
+.el-form {
+	@apply max-w-3xl;
+}

@@ -1,0 +1,15 @@
+name: RoleMenu
+comment: 菜单权限
+fields:
+  - name: RoleId
+    type: uint64
+    comment: 角色ID
+    required: true
+    binding_options: ""
+    gorm_options: "id,string"
+  - name: MenuId
+    type: uint64
+    comment: 菜单ID
+    required: false
+    binding_options: ""
+    gorm_options: "id,string"

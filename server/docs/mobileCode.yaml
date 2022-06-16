@@ -1,0 +1,39 @@
+name: MobileCode
+comment: 短信发送
+fields:
+  - name: Mobile
+    type: string
+    comment: 手机号
+    required: true
+    binding_options: ""
+    gorm_options: "size:20"
+  - name: Code
+    type: string
+    comment: 验证码
+    required: true
+    binding_options: ""
+    gorm_options: "size:20"
+  - name: Type
+    type: string
+    comment: 验证类型
+    required: true
+    binding_options: ""
+    gorm_options: "size:20"
+  - name: State
+    type: uint
+    comment: 验证状态
+    required: true
+    binding_options: ""
+    gorm_options: "size:20"
+  - name: Ip
+    type: string
+    comment: 排序
+    required: false
+    binding_options: ""
+    gorm_options: "size:45;index"
+  - name: ExpiredAt
+    type: time.Time
+    comment: 过期时间
+    required: false
+    binding_options: ""
+    gorm_options: ""

@@ -1,0 +1,45 @@
+name: CasbinRule
+comment: 权限设置
+fields:
+  - name: PType
+    type: string
+    comment: 规则类型
+    required: true
+    binding_options: ""
+    gorm_options: "size:100"
+  - name: V0
+    type: string
+    comment: 角色ID
+    required: true
+    binding_options: ""
+    gorm_options: "size:100"
+  - name: V1
+    type: string
+    comment: api路径
+    required: true
+    binding_options: ""
+    gorm_options: "size:100"
+  - name: V2
+    type: string
+    comment: api访问方法
+    required: true
+    binding_options: ""
+    gorm_options: "size:100"
+  - name: V3
+    type: string
+    comment: ""
+    required: true
+    binding_options: ""
+    gorm_options: "size:100"
+  - name: V4
+    type: string
+    comment: ""
+    required: true
+    binding_options: ""
+    gorm_options: "size:100"
+  - name: V5
+    type: string
+    comment: ""
+    required: true
+    binding_options: ""
+    gorm_options: "size:100"

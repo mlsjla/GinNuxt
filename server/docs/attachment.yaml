@@ -1,0 +1,87 @@
+name: Attachment
+comment: 附件
+fields:
+  - name: Uuid
+    type: string
+    comment: 发布者ID
+    required: true
+    binding_options: ""
+    gorm_options: "string"
+  - name: UserId
+    type: uint64
+    comment: 发布者ID
+    required: true
+    binding_options: ""
+    gorm_options: "id,string"
+  - name: TypeId
+    type: uint64
+    comment: 类型数据ID
+    required: true
+    binding_options: ""
+    gorm_options: "id,string"
+  - name: Order
+    type: int
+    comment: 附件排序
+    required: true
+    binding_options: ""
+    gorm_options: ""
+  - name: Type
+    type: int
+    comment: 附件类型
+    required: true
+    binding_options: ""
+    gorm_options: ""
+  - name: IsRemote
+    type: int
+    comment: 是否远程附件
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: Attachment
+    type: string
+    comment: 文件系统生成的名称
+    required: false
+    binding_options: ""
+    gorm_options: "size:255"
+  - name: FilePath
+    type: string
+    comment: 文件路径
+    required: false
+    binding_options: ""
+    gorm_options: "size:255"
+  - name: FileName
+    type: string
+    comment: 文件原名称
+    required: false
+    binding_options: ""
+    gorm_options: "size:255"
+  - name: FileSize
+    type: uint64
+    comment: 文件大小
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: FileWidth
+    type: uint64
+    comment: 宽度
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: FileHeight
+    type: uint64
+    comment: 高度
+    required: false
+    binding_options: ""
+    gorm_options: ""
+  - name: FileType
+    type: string
+    comment: 文件类型
+    required: false
+    binding_options: ""
+    gorm_options: "size:255"
+  - name: Ip
+    type: string
+    comment: ip
+    required: false
+    binding_options: ""
+    gorm_options: "size:45;index"
