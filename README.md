@@ -2,6 +2,8 @@
 
 > RBAC scaffolding based on GIN + Gorm 2.0 + CASBIN + WIRE (DI).
 
+- Server Base on [gin-admin](https://github.com/LyricTian/gin-admin) 
+
 ## Features
 
 - Follow the `RESTful API` design specification
@@ -104,7 +106,7 @@ wire gen ./internal/app
 ```
 
 # Web
-
+Web based on - [Nuxt3](https://v3.nuxtjs.org/docs/deployment).
 We recommend to look at the [documentation](https://v3.nuxtjs.org).
 
 ## Setup
