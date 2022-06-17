@@ -10,11 +10,17 @@ var sf *sonyflake.Sonyflake
 
 func init() {
 	sf = sonyflake.NewSonyflake(sonyflake.Settings{
-		StartTime: time.Date(2021, 7, 28, 0, 0, 0, 0, time.UTC),
+		StartTime:      time.Date(2021, 7, 28, 0, 0, 0, 0, time.UTC),
+		MachineID:      getMachineID,
+		CheckMachineID: nil,
 	})
 	if sf == nil {
 		panic("sonyflake not created")
 	}
+}
+
+func getMachineID() (uint16, error) {
+	return 0, nil
 }
 
 // Get unique id from Twitter's Snowflake
