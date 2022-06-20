@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Web
-=======
-# Nuxt 3 Minimal Starter
->>>>>>> master
 
 We recommend to look at the [documentation](https://v3.nuxtjs.org).
 

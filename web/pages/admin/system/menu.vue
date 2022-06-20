@@ -56,7 +56,7 @@
                     <el-input v-model="formData.router"></el-input>
                 </el-form-item>
                 <el-form-item label="父菜单">
-                    <el-select @change="parentChange" v-model="formData.parent_id" placeholder="选择父菜单">
+                    <el-select @change="parentChange" v-model="formData.parent_id" clearable placeholder="选择父菜单">
                         <el-option v-for="item in parentMenus" :key="item.value" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
