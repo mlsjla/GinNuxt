@@ -1,3 +1,9 @@
+# GinNuxt
+## DEMO [https://www.ginnuxt.com/](https://www.ginnuxt.com/) 
+
+- support SSR and Single Page
+- use Gin and Nuxt3
+
 # Server
 
 > RBAC scaffolding based on GIN + Gorm 2.0 + CASBIN + WIRE (DI).
