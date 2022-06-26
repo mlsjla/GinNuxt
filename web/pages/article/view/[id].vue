@@ -8,7 +8,7 @@
                     <div class="info flex flex-row justify-between items-center w-full cursor-pointer">
                         <div class="flex flex-row justify-start items-center">
                             <div class="w-12 rounded-full mr-3">
-                                <img class="rounded-full" src="http://127.0.0.1:10088/uploads/file/2382c315a6ba396be1932dd8dafaff52_20220523204927.png" />
+                                <!-- <img class="rounded-full" src="http://127.0.0.1:10088/uploads/file/2382c315a6ba396be1932dd8dafaff52_20220523204927.png" /> -->
                             </div>
                             <div class="user flex flex-col justify-center items-start text-sm">
                                 <span class="flex">{{thread.username}}</span>

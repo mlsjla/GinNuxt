@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     components: true,
     publicRuntimeConfig: {
         baseURL: process.env.baseURL,
+        baseServerURL: process.env.baseServerURL,
         fileURL: process.env.fileURL
     },
     experimental: {
