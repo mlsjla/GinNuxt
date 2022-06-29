@@ -3,10 +3,11 @@
         <div ref="editorRef" class="flex flex-col w-full h-full"></div>
     </div>
 </template>
+
 <script setup>
-import Vditor from "vditor";
 import "vditor/dist/index.css";
 import { useUserStore } from "@/stores/user";
+import Vditor from 'vditor'
 
 const editorRef = $ref();
 var instance;

@@ -1,6 +1,9 @@
-@use "element-plus/dist/index.css";
-
+@use "element-plus/theme-chalk/src/index.scss";
 
 :root {
   --el-color-primary: #0054a5;
+}
+
+body {
+  @apply bg-white;
 }

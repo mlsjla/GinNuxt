@@ -57,7 +57,8 @@ import api from "@/common/api";
 import { ElMessage } from "element-plus";
 
 definePageMeta({
-  middleware: ["auth"]
+  middleware: ["auth"],
+  layout: "default-nossr",
   // or middleware: 'auth'
 })
 

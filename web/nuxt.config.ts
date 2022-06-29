@@ -1,5 +1,19 @@
 import { defineNuxtConfig } from 'nuxt'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 
+const lifecycle = process.env.npm_lifecycle_event
+
+const autoImportOpts = {
+    // imports: [
+    //     {},
+    // ],
+    resolvers: [ElementPlusResolver({ ssr: true,})],
+}
+const vueComponentsOpts = {
+    resolvers: [ElementPlusResolver({ ssr: true, directives: false})],
+}
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -12,9 +26,12 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@pinia/nuxt',
     ],
+    modules: [
+        '@nuxtjs/tailwindcss',
+    ],
     app: {
     },
-    css: ["~/assets/scss/tailwind.scss", "~/assets/scss/main.scss", "~/assets/scss/index.scss", "bootstrap-icons/font/bootstrap-icons.css"],
+    css: ["~/assets/scss/main.scss", "~/assets/scss/index.scss", "bootstrap-icons/font/bootstrap-icons.css"],
     components: true,
     publicRuntimeConfig: {
         baseURL: process.env.baseURL,
@@ -25,16 +42,26 @@ export default defineNuxtConfig({
         reactivityTransform: true
     },
     vite: {
+        plugins: [
+            
+        ],
+        build: {
+        }
     },
     build: {
-        postcss: {
-            postcssOptions: {
-                plugins: {
-                    tailwindcss: {},
-                    autoprefixer: {},
-                    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {})
-                }
-            }
-        },
+        transpile: [
+            ...(lifecycle === 'build' || lifecycle === 'generate'
+                ? ['element-plus']
+                : []),
+            'element-plus/es',
+        ],
+        plugins: [
+            AutoImport({
+                resolvers: [ElementPlusResolver()],
+            }),
+            Components({
+                resolvers: [ElementPlusResolver()],
+            }),
+        ]
     }
 })

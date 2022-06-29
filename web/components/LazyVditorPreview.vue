@@ -3,13 +3,13 @@
 </template>
 
 <script setup>
-import VditorPreview from "vditor/dist/method.min";
+import Vditor from 'vditor'
 const { content } = defineProps(["content"]);
 const contentRef = $ref();
 onMounted(() => {
     console.log('preview content', content)
     nextTick(() => {
-        VditorPreview.preview(contentRef, content, {
+        Vditor.preview(contentRef, content, {
             cdn: "/vditor",
             IPreviewOptions: {
                 cdn: "/vditor",
