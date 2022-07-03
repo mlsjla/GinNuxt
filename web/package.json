@@ -13,7 +13,7 @@
     "autoprefixer": "^10.4.2",
     "bootstrap-icons": "^1.8.1",
     "daisyui": "^2.0.6",
-    "element-plus": "^2.2.6",
+    "element-plus": "^2.2.8",
     "eslint": "^8.5.0",
     "naive-ui": "^2.28.4",
     "nuxt": "^3.0.0-rc.3",
@@ -26,6 +26,8 @@
     "uuidjs": "^4.2.11"
   },
   "dependencies": {
+    "@daotl/unplugin-vue-components": "^0.19.6",
+    "@formkit/nuxt": "^1.0.0-beta.9",
     "@nuxt/schema": "0.1.0-edge",
     "async-validator": "^4.0.7",
     "dayjs": "^1.11.3",

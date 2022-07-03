@@ -1,14 +1,14 @@
 <template>
-  <div>
     <NuxtLayout>
-      <NuxtPage/>
+        <NuxtErrorBoundary>
+            <NuxtPage />
+            <template #error="{ error }">
+                <p>An error occurred: {{ error }}</p>
+            </template>
+        </NuxtErrorBoundary>
     </NuxtLayout>
-  </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss">
-</style>
+<style lang="scss"></style>

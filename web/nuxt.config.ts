@@ -1,19 +1,24 @@
 import { defineNuxtConfig } from 'nuxt'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from '@daotl/unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 
 const lifecycle = process.env.npm_lifecycle_event
 
 const autoImportOpts = {
-    // imports: [
-    //     {},
-    // ],
-    resolvers: [ElementPlusResolver({ ssr: true,})],
+    dirs: ['components', 'pages', 'layouts'],
+    resolvers: [ElementPlusResolver({ ssr: true, nuxt: true, importStyle: 'sass'})],
+    // Allow for components to override other components w})],
+    dts: true // or a custom path
 }
 const vueComponentsOpts = {
-    resolvers: [ElementPlusResolver({ ssr: true, directives: false})],
+    dirs: ['components', 'pages', 'layouts'],
+    directoryAsNamespace: true,
+    allowOverrides: false,
+    resolvers: [ElementPlusResolver({ ssr: true, nuxt: true, importStyle: 'sass'})],
+    dts: true // or a custom path
 }
+
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -28,6 +33,7 @@ export default defineNuxtConfig({
     ],
     modules: [
         '@nuxtjs/tailwindcss',
+        '@formkit/nuxt',
     ],
     app: {
     },
@@ -43,10 +49,9 @@ export default defineNuxtConfig({
     },
     vite: {
         plugins: [
-            
-        ],
-        build: {
-        }
+            AutoImport(autoImportOpts),
+            Components(vueComponentsOpts),
+        ]
     },
     build: {
         transpile: [
@@ -55,13 +60,5 @@ export default defineNuxtConfig({
                 : []),
             'element-plus/es',
         ],
-        plugins: [
-            AutoImport({
-                resolvers: [ElementPlusResolver()],
-            }),
-            Components({
-                resolvers: [ElementPlusResolver()],
-            }),
-        ]
     }
 })

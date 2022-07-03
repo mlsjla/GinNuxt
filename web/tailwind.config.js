@@ -39,5 +39,10 @@ module.exports = {
             },
             'dark', // and some pre-defined theme
         ],
+        styled: true,
+        base: false,
+        utils: true,
+        logs: true,
+        rtl: false,
     },
 }
