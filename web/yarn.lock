@@ -947,6 +947,15 @@
     "estree-walker" "^2.0.1"
     "picomatch" "^2.2.2"
 
+"@tailwindcss/typography@^0.5.4":
+  "integrity" "sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg=="
+  "resolved" "https://registry.npmjs.org/@tailwindcss/typography/-/typography-0.5.4.tgz"
+  "version" "0.5.4"
+  dependencies:
+    "lodash.castarray" "^4.4.0"
+    "lodash.isplainobject" "^4.0.6"
+    "lodash.merge" "^4.6.2"
+
 "@trysound/sax@0.2.0":
   "integrity" "sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA=="
   "resolved" "https://registry.npmmirror.com/@trysound/sax/-/sax-0.2.0.tgz"
@@ -3914,6 +3923,11 @@
   "resolved" "https://registry.npmmirror.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz"
   "version" "3.0.0"
 
+"lodash.castarray@^4.4.0":
+  "integrity" "sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q=="
+  "resolved" "https://registry.npmjs.org/lodash.castarray/-/lodash.castarray-4.4.0.tgz"
+  "version" "4.4.0"
+
 "lodash.debounce@^4.0.8":
   "integrity" "sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow=="
   "resolved" "https://registry.npmmirror.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
@@ -4724,10 +4738,10 @@
   "resolved" "https://registry.npmmirror.com/pify/-/pify-2.3.0.tgz"
   "version" "2.3.0"
 
-"pinia-plugin-persistedstate@^1.6.1":
-  "integrity" "sha512-4re0ZO5KgqDnSNWX2RhJVIsIYvH+uaEGTN+UOx34mb7fVoE8A3CfB9QhbMT3Zn7ZSBXTfT2cgI/w7cLq2zNQMw=="
-  "resolved" "https://registry.npmmirror.com/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-1.6.1.tgz"
-  "version" "1.6.1"
+"pinia-plugin-persistedstate@^1.6.3":
+  "integrity" "sha512-vwxUca3DZKW6+wnGsgu6hA0ESVKoLovF8vH1jMOPBhaH4VpCSTgn5AsprTxXyg3uMk047m0B+NggeMTcCC8H6w=="
+  "resolved" "https://registry.npmjs.org/pinia-plugin-persistedstate/-/pinia-plugin-persistedstate-1.6.3.tgz"
+  "version" "1.6.3"
 
 "pinia@^2.0.0", "pinia@^2.0.11", "pinia@>=2.0.14":
   "integrity" "sha512-0nPuZR4TetT/WcLN+feMSjWJku3SQU7dBbXC6uw+R6FLQJCsg+/0pzXyD82T1FmAYe0lsx+jnEDQ1BLgkRKlxA=="
@@ -5802,7 +5816,7 @@
     "portfinder" "^1.0.26"
     "replace-in-file" "^6.1.0"
 
-"tailwindcss@^3.0", "tailwindcss@^3.0.0", "tailwindcss@^3.1.4", "tailwindcss@1 || 2 || 2.0.1-compat || 3":
+"tailwindcss@^3.0", "tailwindcss@^3.0.0", "tailwindcss@^3.1.4", "tailwindcss@>=3.0.0 || insiders", "tailwindcss@1 || 2 || 2.0.1-compat || 3":
   "integrity" "sha512-NrxbFV4tYsga/hpWbRyUfIaBrNMXDxx5BsHgBS4v5tlyjf+sDsgBg5m9OxjrXIqAS/uR9kicxLKP+bEHI7BSeQ=="
   "resolved" "https://registry.npmmirror.com/tailwindcss/-/tailwindcss-3.1.4.tgz"
   "version" "3.1.4"

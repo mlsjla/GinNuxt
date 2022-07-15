@@ -20,7 +20,7 @@
                             关注
                         </button>
                     </div>
-                    <div v-if="isBot" class="w-full vditor-content flex-col leading-relaxed" v-html="thread.content"></div>
+                    <div v-if="isBot" class="w-full prose lg:prose-xl flex-col leading-relaxed" v-html="thread.content"></div>
                     <ClientOnly v-else-if="thread.content">
                         <LazyVditorPreview v-model:content="thread.content"></LazyVditorPreview>
                     </ClientOnly>

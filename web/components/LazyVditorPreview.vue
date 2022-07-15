@@ -1,5 +1,5 @@
 <template>
-    <div ref="contentRef" class="w-full vditor-content flex-col leading-relaxed"></div>
+    <div ref="contentRef" class="w-full  prose lg:prose-xl flex-col leading-relaxed"></div>
 </template>
 
 <script setup>

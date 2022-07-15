@@ -4,9 +4,9 @@
             <div class="flex w-full justify-between">
                 <div class="flex items-center">
                     <NuxtLink to="/" class="nuxt-link-active"
-                        ><div class="flex items-start space-x-3 h-8 md:h-9">
-                            <!-- <img class="h-14" src="/images/logo.svg" alt=""> -->
+                        ><div class="flex motion-safe:animate-bounce items-start space-x-3 h-8 md:h-9">
                             <i class="bi bi-cone text-3xl col text-blue-700"></i>
+                            <span class="text-3xl">GinNuxt</span>
                             <span
                                 class="primary text-xs"
                                 ></span
