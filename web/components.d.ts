@@ -3,6 +3,8 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
+export {}
+
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Admin: typeof import('./pages/admin/index.vue')['default']
@@ -61,5 +63,3 @@ declare module '@vue/runtime-core' {
     WebHeader: typeof import('./components/web/header.vue')['default']
   }
 }
-
-export {}
