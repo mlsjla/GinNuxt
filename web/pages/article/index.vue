@@ -12,7 +12,7 @@
                     <div class="flex flex-col justify-center items-center w-full md:w-40 md:mr-5 pb-4 md:pb-0">
                         <el-image :src="config.fileURL + '/' + topic.cover" fit="scale-down"></el-image>
                     </div>
-                    <div class="info h-40 flex flex-col justify-between items-start">
+                    <div class="info h-28 flex flex-col justify-between items-start">
                         <h2 class="text-xl font-bold">{{topic.title}}</h2>
                         <p class="text-sm pt-3 pb-2 flex-grow pr-5 md:pr-0 flex-wrap">{{topic.summary}}</p>
                         <div class="info text-sm flex justify-start flex-wrap w-full">
