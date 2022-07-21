@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col justify-start items-center relative min-h-screen">
         <web-header></web-header>
-        <div v-if="thread" class="w-full main flex flex-col flex-start justify-start items-center flex-grow">
+        <div v-if="thread" class=" px-4 md:px-0 md:w-full main mt-5 flex flex-col flex-start justify-start items-center flex-grow">
             <h2 class="w-full text-3xl font-bold text-left mb-5">{{ thread.title }}</h2>
             <div class="w-full flex flex-row justify-between items-center cursor-pointer">
                 <div class="flex flex-row justify-start items-center">

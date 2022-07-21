@@ -9,8 +9,8 @@
             </ul>
             <div class="list flex flex-col justify-start items-start overflow-hidden flex-wrap">
                 <NuxtLink :to="`/article/view/${topic.id}`" v-for="(topic, index) in treadList" :key="index" class="item flex flex-col md:flex-row md:pl-5 pb-5 overflow-hidden">
-                    <div class="flex w-full md:w-40 mr-5">
-                        <img class="h-40" :src="config.fileURL + '/' +topic.cover" alt="">
+                    <div class="flex flex-col justify-center items-center w-full md:w-40 md:mr-5 pb-4 md:pb-0">
+                        <el-image :src="config.fileURL + '/' + topic.cover" fit="scale-down"></el-image>
                     </div>
                     <div class="info h-40 flex flex-col justify-between items-start">
                         <h2 class="text-xl font-bold">{{topic.title}}</h2>
