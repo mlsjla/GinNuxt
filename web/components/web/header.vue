@@ -22,7 +22,7 @@
                 </nav>
                 <div class="flex flex-row items-center">
                     <div class="text-lg mr-3 cursor-pointer" v-if="userStore?.user?.username">{{userStore?.user?.username}}</div>
-                    <nuxt-link class="text-xl mr-3 cursor-pointer" v-else to="/user/login"><i class="bi bi-person"></i></nuxt-link>
+                    <!-- <nuxt-link class="text-xl mr-3 cursor-pointer" v-else to="/user/login"><i class="bi bi-person"></i></nuxt-link> -->
                     <nuxt-link class="text-xl mr-3 cursor-pointer" to="/user/edit"><i class="bi bi-gear"></i></nuxt-link>
                     <i class="text-xl mr-3 cursor-pointer bi bi-box-arrow-right"></i>
                 </div>
@@ -34,8 +34,11 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { useUserStore } from '@/stores/user'
+import { useCategoryStore } from "@/stores/category";
+
 const router = useRouter();
 const userStore = useUserStore();
+useCategoryStore().init()
 </script>
 
 <style lang="scss" scoped>

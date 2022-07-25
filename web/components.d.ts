@@ -55,6 +55,7 @@ declare module '@vue/runtime-core' {
     RoleSelect: typeof import('./components/role-select.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    User: typeof import('./pages/user/index.vue')['default']
     UserEdit: typeof import('./pages/user/edit.vue')['default']
     UserLogin: typeof import('./pages/user/login.vue')['default']
     UserPassword: typeof import('./pages/user/password.vue')['default']

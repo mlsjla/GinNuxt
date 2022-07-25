@@ -35,6 +35,7 @@ type UpdateInfoParam struct {
 	Nickname  string `json:"nickname"` // 昵称
 	Avatar    string `json:"avatar"`
 	Introduce string `json:"introduce"` // 个人介绍
+	Realname  string `json:"realname"`  // 个人介绍
 }
 
 type UpdatePasswordParam struct {

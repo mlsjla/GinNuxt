@@ -1,14 +1,10 @@
 import { useUserStore } from '@/stores/user'
 import { useRouter, useRoute } from "#imports";
+import { hash } from 'ohash'
+
 
 const request = async (url, options) => {    
     // 对服务端请求和客户端请求进行分开处理
-    if(process.client) {
-        console.log("client request...")
-    }else {
-        console.log("server request...")
-    }
-
     const config = useRuntimeConfig()
     const userStore = useUserStore()
 
@@ -19,14 +15,14 @@ const request = async (url, options) => {
     
     const requestURL  = process.client ? config.baseURL : (config.baseServerURL ? config.baseServerURL : config.baseURL)
 
-    return await useFetch(url, {
+    const result = await useFetch(url, {
         ...options,
-        baseURL: config.baseURL,
+        key : hash(['api-fetch', url, options.params, options.method]),
+        baseURL: requestURL,
         method: options.method,
         body: options.body,
         params: options.params,
         initialCache: false,
-        server: true,
         headers: {
             ...options.headers,
             Authorization: 'Bearer ' + userStore?.token?.access_token
@@ -41,5 +37,8 @@ const request = async (url, options) => {
             }
         }
     })
+
+    console.log("result", result)
+    return result
 }
 export default request

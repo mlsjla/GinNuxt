@@ -81,6 +81,7 @@ definePageMeta({
 });
 
 const roleStore = useRoleStore();
+roleStore.init()
 const menuStore = useMenuStore();
 const dialogVisible = $ref(false);
 const formData = $ref({

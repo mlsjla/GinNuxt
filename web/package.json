@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "TAILWIND_MODE=watch nuxi dev --port=3100",
+    "dev": "TAILWIND_MODE=watch nuxi dev --port=3100  --mode dev",
     "build": "nuxi build",
     "generate": "nuxi generate",
     "start": "node .output/server/index.mjs"

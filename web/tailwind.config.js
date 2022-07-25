@@ -37,13 +37,12 @@ module.exports = {
                     "base-100": "#f6f6f6",
                     // other colors
                 }
-            },
-            'dark', // and some pre-defined theme
+            }
         ],
         styled: true,
-        base: false,
+        base: true,
         utils: true,
-        logs: true,
+        logs: false,
         rtl: false,
     },
 }

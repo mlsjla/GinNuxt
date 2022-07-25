@@ -9,6 +9,14 @@
     </NuxtLayout>
 </template>
 
-<script setup></script>
+<script setup>
+import { useUserStore } from '@/stores/user'
+
+onMounted(() => {
+    nextTick(() => {
+        useUserStore().init()
+    })
+})
+</script>
 
 <style lang="scss"></style>

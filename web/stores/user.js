@@ -1,6 +1,8 @@
 import {
     defineStore
 } from 'pinia'
+import api from "@/common/api";
+
 
 // user is the name of the store. It is unique across your application
 // and will appear in devtools
@@ -19,6 +21,10 @@ export const useUserStore = defineStore('user', {
     },
     // optional actions
     actions: {
+        async init() {
+            const { data: info } = await api.user.current()
+            this.user = info.value || {}
+        },
         reset() {
             // `this` is the store instance
         },

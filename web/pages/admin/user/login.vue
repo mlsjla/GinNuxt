@@ -170,15 +170,11 @@ const login = async () => {
             });
 
             const userStore = useUserStore();
-            userStore.$patch({
+            await userStore.$patch({
                 token: loginInfo,
             });
-
-            const { data: userInfo } = await api.user.current();
-            userInfo &&
-                userStore.$patch({
-                    user: userInfo,
-                });
+            
+            useUserStore().init()
 
             const router = useRouter();
             router.push("/admin/home");

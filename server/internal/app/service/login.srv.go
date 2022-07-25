@@ -102,25 +102,24 @@ func (a *LoginSrv) checkAndGetUser(ctx context.Context, userID uint64) (*schema.
 		return nil, err
 	} else if user == nil {
 		return nil, errors.ErrNotFound
-	} else if user.Status != 1 {
+	} else if !schema.CheckIsRootUser(ctx, userID) && user.Status != 1 {
 		return nil, errors.ErrUserDisable
 	}
 	return user, nil
 }
 
 func (a *LoginSrv) GetLoginInfo(ctx context.Context, userID uint64) (*schema.UserLoginInfo, error) {
-	if isRoot := schema.CheckIsRootUser(ctx, userID); isRoot {
-		root := schema.GetRootUser()
-		loginInfo := &schema.UserLoginInfo{
-			Username: root.Username,
-			Realname: root.Realname,
-			UserID:   root.ID,
-		}
-		return loginInfo, nil
-	}
-
 	user, err := a.checkAndGetUser(ctx, userID)
 	if err != nil {
+		if isRoot := schema.CheckIsRootUser(ctx, userID); isRoot {
+			root := schema.GetRootUser()
+			loginInfo := &schema.UserLoginInfo{
+				Username: root.Username,
+				Realname: root.Realname,
+				UserID:   root.ID,
+			}
+			return loginInfo, nil
+		}
 		return nil, err
 	}
 
@@ -135,6 +134,7 @@ func (a *LoginSrv) GetLoginInfo(ctx context.Context, userID uint64) (*schema.Use
 		LickdCount:    user.LickdCount,
 		QuestionCount: user.QuestionCount,
 		Avatar:        user.Avatar,
+		Introduce:     user.Introduce,
 	}
 
 	userRoleResult, err := a.UserRoleRepo.Query(ctx, schema.UserRoleQueryParam{
@@ -177,6 +177,26 @@ func (a *LoginSrv) UpdateUserInfo(ctx context.Context, userID uint64, params sch
 		user.Avatar = params.Avatar
 	}
 	user.Introduce = params.Introduce
+	user.Realname = params.Realname
+
+	// 如果是管理员，则检测而用户表是否有信息，如有，则更新，无没有，则创建
+	if schema.CheckIsRootUser(ctx, userID) {
+		_, err := a.checkAndGetUser(ctx, userID)
+		root := schema.GetRootUser()
+		if err == errors.ErrNotFound {
+			// 则创建用户
+			user.ID = userID
+			user.Username = root.Username
+			user.Status = 1
+			user.Introduce = params.Introduce
+			user.Nickname = params.Nickname
+			user.Avatar = params.Avatar
+			user.Realname = params.Realname
+			return a.UserRepo.Create(ctx, user)
+		} else if err != nil {
+			return err
+		}
+	}
 
 	return a.UserRepo.Update(ctx, userID, user)
 }

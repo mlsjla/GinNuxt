@@ -105,6 +105,7 @@ const propertyOptions = $ref([
 ])
 
 const categoryStore = useCategoryStore();
+categoryStore.init()
 const dialogVisible = $ref(false);
 const iconsList = reactive(iconsData);
 const formData = $ref({

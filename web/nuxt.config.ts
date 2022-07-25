@@ -19,6 +19,19 @@ const vueComponentsOpts = {
     dts: true // or a custom path
 }
 
+var config = {
+    baseURL: process.env.baseURL,
+    baseServerURL: process.env.baseServerURL,
+    fileURL: process.env.fileURL
+}
+if(process.env.runMode == 'dev') {
+    config = {
+        baseURL: process.env.baseDevURL,
+        baseServerURL: process.env.baseDevServerURL,
+        fileURL: process.env.fileDevURL
+    }
+}
+
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
@@ -40,9 +53,7 @@ export default defineNuxtConfig({
     css: ["~/assets/scss/main.scss", "~/assets/scss/index.scss", "bootstrap-icons/font/bootstrap-icons.css"],
     components: true,
     publicRuntimeConfig: {
-        baseURL: process.env.baseURL,
-        baseServerURL: process.env.baseServerURL,
-        fileURL: process.env.fileURL
+        ...config
     },
     experimental: {
         reactivityTransform: true

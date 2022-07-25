@@ -2,7 +2,7 @@
     <div class="flex flex-col justify-start items-center w-full min-h-screen">
         <!-- <web-header></web-header> -->
         <div class="main main-p w-full flex flex-col justify-center items-center flex-grow">
-            <div class="card shadow bg-white mb:w-1/3 mt-5 mb-5">
+            <div class="card shadow bg-white md:w-1/3 mt-5 mb-5">
                 <div class="card-body">
                     <h2 class="card-title">
                         <div class="logo flex flex-row justify-center items-center w-full">
@@ -71,6 +71,7 @@ import { useRouter, useRoute } from "#imports";
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
 import Schema from "async-validator";
+import dayjs from "dayjs"
 
 definePageMeta({
   layout: "default-nossr",

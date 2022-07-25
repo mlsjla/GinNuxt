@@ -22,10 +22,8 @@ export const useRoleStore = defineStore('role', {
                 data: roleTree
             } = await api.role.get();
             const roleList = $ref([])
-            if(roleTree.value) {
-                roleList = roleTree.value.list
-                this.role = roleList
-            }
+            roleList = roleTree?.value?.list
+            this.role = roleList || []
             
         },
         reset() {

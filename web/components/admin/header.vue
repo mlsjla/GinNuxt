@@ -7,7 +7,7 @@
       <!-- <img src="https://www.zhanmishu.com/template/zhanmishu_edu/images/logo.png" alt=""> -->
     </div>
     <div class="menu-list flex-grow">
-      <ul class="menu p-3 menu-vertical lg:menu-horizontal">
+      <ul class="menu p-3 flex flex-row justify-start">
         <li @click="tapMenu(item)" v-for="(item, index) in menuList" :key="index" class="">
           <a>
             {{ item.name }}
@@ -34,12 +34,14 @@ import { ElMessage } from "element-plus";
 
 const router = useRouter();
 const menuStore = useMenuStore();
-const useStore = useRoleStore()
+const roleStore = useRoleStore()
 const { user, token } = useUserStore();
 
 onMounted(() => {
-  menuStore.init()
-  useStore.init()
+  nextTick(() => {
+    menuStore.init()
+    roleStore.init()
+  })
 })
 
 

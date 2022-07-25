@@ -22,11 +22,7 @@ export const useMenuStore = defineStore('menu', {
             const {
                 data: menuTree
             } = await api.menu.tree();
-            const menuList = $ref([])
-            if(menuTree.value) {
-                menuList = menuTree.value.list
-                this.menu = menuList
-            }
+            this.menu = menuTree?.value?.list || []
 
             const {data:userMenuTree} = api.user.menutree()
         },

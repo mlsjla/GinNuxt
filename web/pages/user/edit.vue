@@ -100,6 +100,11 @@ const  submitForm = async (formEl) => {
                     type: "success",
                 });
             }
+
+            await userStore.init()
+            formData = userStore?.user ? {
+                ...userStore?.user
+            } : {}
         } else {
             console.log("error submit!", fields);
         }
