@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
 	"github.com/dchest/captcha"
@@ -51,6 +52,7 @@ func (a *LoginSrv) ResCaptcha(ctx context.Context, w http.ResponseWriter, captch
 func (a *LoginSrv) Verify(ctx context.Context, userName, password string) (*schema.User, error) {
 	root := schema.GetRootUser()
 	v := hash.BcryptCompare(root.Password, password)
+	fmt.Println(v, root)
 	if userName == root.Username && v == nil && root.Username != "" {
 		return root, nil
 	}
