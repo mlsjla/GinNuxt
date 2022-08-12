@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import VditorPreview from 'vditor/dist/method.min'
+import VditorPreview from 'vditor/dist/method.min.js'
 
 const { content } = defineProps(["content"]);
 const contentRef = $ref();
@@ -25,11 +25,9 @@ const preview = async() => {
 }
 
 onMounted(async() => {
-    console.log("渲染...")
     preview()
 });
 onUnmounted(() => {
-    console.log("onUnmounted...")
 })
 
 </script>

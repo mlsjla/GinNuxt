@@ -35,7 +35,6 @@ const initEditor = () => {
             success: (element, res) => {
                 let files = JSON.parse(res);
                 const config = useRuntimeConfig();
-                console.log("config", config.fileURL);
                 let insertValue = "";
                 if (files?.length > 0) {
                     files.forEach((item) => {
@@ -96,7 +95,6 @@ const stop = watch(
     () => content,
     (newVal, oldVal) => {
         if(newVal) {
-            console.log("watch content...")
             instance.setValue(content);
             stop()
         }

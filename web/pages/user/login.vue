@@ -50,6 +50,7 @@
                                 class="input input-ghost border-0 flex-grow pr-16"
                             />
                             <img
+                                v-if="captchaUrl"
                                 @click="captchaReload"
                                 :src="captchaUrl"
                                 class="absolute top-0 right-0 rounded-l-none w-1/3 h-full"

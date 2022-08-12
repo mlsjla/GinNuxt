@@ -32,13 +32,15 @@ const request = async (url, options) => {
             console.log('[fetch response error]', request, response.status, response.body)
             if(response.status == 401) {
                 // 登录失效
+                userStore && userStore.$patch({
+                    token: undefined,
+                });
                 const router = useRouter();
                 router.push('/admin/user/login')
             }
         }
     })
 
-    console.log("result", result)
     return result
 }
 export default request

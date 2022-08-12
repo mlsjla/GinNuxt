@@ -22,6 +22,10 @@ export const useUserStore = defineStore('user', {
     // optional actions
     actions: {
         async init() {
+            console.log("this.token", this.token)
+            if(!this.token) {
+                return
+            }
             const { data: info } = await api.user.current()
             this.user = info.value || {}
         },
