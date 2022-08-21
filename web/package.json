@@ -20,7 +20,7 @@
     "element-plus": "^2.2.12",
     "eslint": "^8.21.0",
     "naive-ui": "^2.32.1",
-    "nuxt": "^3.0.0-rc.5",
+    "nuxt": "^3.0.0-rc.8",
     "pinia": "^2.0.18",
     "pinia-plugin-persistedstate": "^2.1.1",
     "postcss": "^8.4.16",
