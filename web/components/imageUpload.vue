@@ -11,12 +11,11 @@ import { ref } from "vue";
 import { Delete, Download, Plus, ZoomIn } from "@element-plus/icons-vue";
 import { genFileId } from "element-plus";
 
-import { useUserStore } from "@/stores/user";
 const { url, limit } = defineProps(["url", "limit"]);
 const emit = defineEmits(["change", "esc", "blur", "focus", "input", "update:url"]);
 const config = useRuntimeConfig();
 
-const userStore = useUserStore();
+const userStore = inject("userStore")
 const upload = ref();
 const uploadURL = config.baseURL + "/api/v1/upload/upload"
 const headers = {

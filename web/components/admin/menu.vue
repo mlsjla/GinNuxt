@@ -15,12 +15,11 @@
 </template>
 
 <script setup>
-import { useMenuStore } from "@/stores/menu";
 import { useRouter, useRoute } from "#imports";
 const router = useRouter();
 const route = useRoute();
 
-const menuStore = useMenuStore();
+const menuStore = inject('menuStore');
 
 const tapMenu = (item) => {
     if (item.router) {

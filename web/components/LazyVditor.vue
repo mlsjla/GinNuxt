@@ -6,7 +6,6 @@
 
 <script setup>
 import "vditor/dist/index.css";
-import { useUserStore } from "@/stores/user";
 import Vditor from 'vditor'
 
 const editorRef = $ref();
@@ -15,7 +14,7 @@ var instance;
 const { content } = defineProps(["content"]);
 const emit = defineEmits(["change", "esc", "blur", "focus", "input", "update:content"]);
 const config = useRuntimeConfig();
-const userStore = useUserStore();
+const userStore = inject("userStore")
 
 const initEditor = () => {
     instance = new Vditor(editorRef, {

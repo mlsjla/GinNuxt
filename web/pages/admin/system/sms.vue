@@ -77,12 +77,10 @@ definePageMeta({
     layout: "admin",
 });
 import { ElMessage } from "element-plus";
-import { useDictionaryStore } from "@/stores/dictionary";
-import { useCategoryStore } from "@/stores/category";
 import api from "@/common/api";
-const dictionaryStore = useDictionaryStore();
-const categoryStore = useCategoryStore();
-categoryStore.init();
+const dictionaryStore = inject('dictionaryStore');
+
+const categoryStore = inject("categoryStore")
 const categoryList = computed(() => {
     return categoryStore.category;
 });

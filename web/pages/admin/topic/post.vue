@@ -62,8 +62,6 @@
 </template>
 
 <script setup>
-import { useDictionaryStore } from "@/stores/dictionary";
-import { useCategoryStore } from "@/stores/category";
 import api from "@/common/api";
 import { useRouter, useRoute } from "#imports";
 import { ElMessage } from "element-plus";
@@ -76,15 +74,13 @@ definePageMeta({
 
 const router = useRouter();
 
-const dictionaryStore = useDictionaryStore();
-const categoryStore = useCategoryStore();
-
+const dictionaryStore = inject('dictionaryStore');
+const categoryStore = inject("categoryStore")
 const categoryList = computed(() => {
     return categoryStore.category;
 });
 
 onMounted(() => {
-    categoryStore.init();
     nextTick(async () => {
         fetchThreads();
     });

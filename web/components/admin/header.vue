@@ -26,16 +26,14 @@
 </template>
 
 <script setup>
-import { useMenuStore } from "@/stores/menu";
-import { useRoleStore } from "@/stores/role";
-import { useUserStore } from "@/stores/user";
 import { useRouter, useRoute } from "#imports";
 import { ElMessage } from "element-plus";
 
 const router = useRouter();
-const menuStore = useMenuStore();
-const roleStore = useRoleStore()
-const { user, token } = useUserStore();
+const menuStore = inject('menuStore');
+const roleStore = inject('roleStore')
+const userStore = inject("userStore")
+const { user, token } = userStore
 
 onMounted(() => {
   nextTick(() => {

@@ -87,7 +87,6 @@
 </template>
 
 <script setup>
-import { useMenuStore } from "@/stores/menu";
 import iconsData from "@/common/icons";
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
@@ -97,7 +96,7 @@ definePageMeta({
     layout: "admin",
 });
 
-const menuStore = useMenuStore();
+const menuStore = inject('menuStore');
 const dialogVisible = $ref(false);
 const iconsList = reactive(iconsData);
 const formData = $ref({

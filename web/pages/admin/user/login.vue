@@ -71,7 +71,6 @@
 <script setup>
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
-import { useUserStore } from "@/stores/user";
 import dayjs from "dayjs";
 import Schema from "async-validator";
 import { useRouter, useRoute } from "#imports";
@@ -170,12 +169,12 @@ const login = async () => {
                 type: "success",
             });
 
-            const userStore = useUserStore();
+            const userStore = inject("userStore")
             await userStore.$patch({
                 token: loginInfo,
             });
             
-            useUserStore().init()
+            userStore.init()
 
             const router = useRouter();
             router.push("/admin/home");

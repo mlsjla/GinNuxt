@@ -9,8 +9,7 @@
 </template>
 
 <script setup>
-import { useRoleStore } from "@/stores/role";
-const rolestore = useRoleStore();
+const rolestore = inject('rolestore');
 const { user_roles } = defineProps(["user_roles"]);
 const emit = defineEmits(["change", "update:user_roles"]);
 

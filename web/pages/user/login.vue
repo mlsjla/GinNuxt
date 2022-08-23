@@ -67,7 +67,6 @@
 </template>
 
 <script setup>
-import { useUserStore } from "@/stores/user";
 import { useRouter, useRoute } from "#imports";
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
@@ -81,7 +80,7 @@ definePageMeta({
 
 
 const config = useRuntimeConfig();
-const userStore = useUserStore();
+const userStore = inject("userStore")
 
 const captcha = $ref({});
 const captchaString = $ref("");
@@ -168,7 +167,6 @@ const login = async () => {
                 type: "success",
             });
 
-            const userStore = useUserStore();
             userStore.$patch({
                 token: loginInfo,
             });

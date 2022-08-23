@@ -89,7 +89,6 @@
 definePageMeta({
     layout: "admin",
 });
-import { useCategoryStore } from "@/stores/category";
 import iconsData from "@/common/icons";
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
@@ -104,7 +103,7 @@ const propertyOptions = $ref([
     }
 ])
 
-const categoryStore = useCategoryStore();
+const categoryStore = inject("categoryStore")
 categoryStore.init()
 const dialogVisible = $ref(false);
 const iconsList = reactive(iconsData);

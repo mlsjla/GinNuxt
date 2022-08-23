@@ -2,6 +2,7 @@ import {
     defineStore
 } from 'pinia'
 import api from "@/common/api";
+import { useUserStore } from './user.js'
 
 // category is the name of the store. It is unique across your application
 // and will appear in devtools
@@ -18,9 +19,18 @@ export const useCategoryStore = defineStore('category', {
     // optional actions
     actions: {
         async init() {
+            let userStore = useUserStore()
+            const fetchCategory = async () => {
+                if(userStore.token) {
+                    return await api.category.tree()
+                }else {
+                    return await api.category.openTree()
+                }
+            }
             const {
                 data: categoryTree
-            } = await api.category.tree();
+            } = await fetchCategory()
+            
             const categoryList = $ref([])
             if(categoryTree.value) {
                 categoryList = categoryTree.value.list

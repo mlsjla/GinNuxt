@@ -33,12 +33,10 @@
 
 <script setup>
 import { useRouter } from "vue-router";
-import { useUserStore } from '@/stores/user'
-import { useCategoryStore } from "@/stores/category";
 
 const router = useRouter();
-const userStore = useUserStore();
-useCategoryStore().init()
+const userStore = inject("userStore")
+
 </script>
 
 <style lang="scss" scoped>

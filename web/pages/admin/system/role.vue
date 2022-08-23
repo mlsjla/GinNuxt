@@ -69,8 +69,6 @@
 </template>
 
 <script setup>
-import { useRoleStore } from "@/stores/role";
-import { useMenuStore } from "@/stores/menu";
 
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
@@ -80,9 +78,8 @@ definePageMeta({
     layout: "admin",
 });
 
-const roleStore = useRoleStore();
-roleStore.init()
-const menuStore = useMenuStore();
+const roleStore = inject('roleStore');
+const menuStore = inject('menuStore');
 const dialogVisible = $ref(false);
 const formData = $ref({
     id: undefined,

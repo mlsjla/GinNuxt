@@ -78,7 +78,6 @@
 </template>
 
 <script setup>
-import { useUserStore } from "@/stores/user";
 import { useRouter } from "vue-router";
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
@@ -91,7 +90,7 @@ definePageMeta({
 
 const config = useRuntimeConfig();
 const router = useRouter();
-const userStore = useUserStore();
+const userStore = inject("userStore")
 
 const captcha = $ref({})
 const captchaString = $ref("");

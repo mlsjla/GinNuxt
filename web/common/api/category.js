@@ -5,6 +5,11 @@ export default {
             method: 'GET'
         })
     },
+    openTree: () => {
+        return request('/api/v1/pub/open/categories.tree', {
+            method: 'GET'
+        })
+    },
     post: (data) => {
         return request('/api/v1/categories', {
             method: 'POST',

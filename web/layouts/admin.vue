@@ -13,3 +13,22 @@
         </ClientOnly>
     </div>
 </template>
+
+<script setup>
+import { useDictionaryStore } from "@/stores/dictionary";
+import { useRoleStore } from "@/stores/role";
+import { useMenuStore } from "@/stores/menu";
+
+dictionaryStore = useDictionaryStore()
+dictionaryStore.init()
+provide("dictionaryStore", dictionaryStore)
+
+roleStore = useRoleStore()
+roleStore.init()
+provide("roleStore", roleStore)
+
+menuStore = useMenuStore()
+menuStore.init()
+provide("menuStore", menuStore)
+
+</script>
