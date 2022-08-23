@@ -63,7 +63,7 @@
 
 <script setup>
 import api from "@/common/api";
-import { useRouter, useRoute } from "#imports";
+
 import { ElMessage } from "element-plus";
 import { LazyVditor } from '#components'
 

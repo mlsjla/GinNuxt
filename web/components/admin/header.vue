@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { useRouter, useRoute } from "#imports";
+
 import { ElMessage } from "element-plus";
 
 const router = useRouter();

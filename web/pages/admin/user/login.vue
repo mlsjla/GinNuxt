@@ -73,9 +73,10 @@ import api from "@/common/api";
 import { ElMessage } from "element-plus";
 import dayjs from "dayjs";
 import Schema from "async-validator";
-import { useRouter, useRoute } from "#imports";
+
 
 const config = useRuntimeConfig();
+const userStore = inject("userStore")
 
 const user = $ref({
     username: undefined,
@@ -168,8 +169,6 @@ const login = async () => {
                 message: "登录成功",
                 type: "success",
             });
-
-            const userStore = inject("userStore")
             await userStore.$patch({
                 token: loginInfo,
             });

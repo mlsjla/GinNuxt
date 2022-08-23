@@ -1,5 +1,4 @@
 import { useUserStore } from '@/stores/user'
-import { useRouter, useRoute } from "#imports";
 import { hash } from 'ohash'
 
 

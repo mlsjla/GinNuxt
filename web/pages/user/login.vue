@@ -67,7 +67,7 @@
 </template>
 
 <script setup>
-import { useRouter, useRoute } from "#imports";
+
 import api from "@/common/api";
 import { ElMessage } from "element-plus";
 import Schema from "async-validator";

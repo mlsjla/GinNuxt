@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { useRouter, useRoute } from "#imports";
+
 const router = useRouter();
 const route = useRoute();
 
