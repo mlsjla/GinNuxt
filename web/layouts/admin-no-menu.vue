@@ -13,22 +13,21 @@
     </div>
 </template>
 
-
 <script setup>
 import { useDictionaryStore } from "@/stores/dictionary";
 import { useRoleStore } from "@/stores/role";
 import { useMenuStore } from "@/stores/menu";
 
-dictionaryStore = useDictionaryStore()
-dictionaryStore.init()
+const dictionaryStore = useDictionaryStore()
 provide("dictionaryStore", dictionaryStore)
 
-roleStore = useRoleStore()
-roleStore.init()
+const roleStore = useRoleStore()
 provide("roleStore", roleStore)
 
-menuStore = useMenuStore()
-menuStore.init()
+const menuStore = useMenuStore()
 provide("menuStore", menuStore)
 
+menuStore.init()
+roleStore.init()
+dictionaryStore.init()
 </script>

@@ -78,8 +78,8 @@ definePageMeta({
 });
 import { ElMessage } from "element-plus";
 import api from "@/common/api";
-const dictionaryStore = inject('dictionaryStore');
 
+const dictionaryStore = inject('dictionaryStore');
 const categoryStore = inject("categoryStore")
 const categoryList = computed(() => {
     return categoryStore.category;
