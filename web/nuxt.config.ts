@@ -45,8 +45,7 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
     ],
     modules: [
-        '@nuxtjs/tailwindcss',
-        '@formkit/nuxt',
+        '@nuxtjs/tailwindcss'
     ],
     app: {
     },
