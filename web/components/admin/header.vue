@@ -3,7 +3,6 @@
     <div class="logo flex flex-row justify-between items-center">
       <i class="bi-chat-dots-fill" style="font-size: 38px"></i>
       <h2>测试</h2>
-      <!-- 爱上钓鱼 -->
       <!-- <img src="https://www.zhanmishu.com/template/zhanmishu_edu/images/logo.png" alt=""> -->
     </div>
     <div class="menu-list flex-grow">

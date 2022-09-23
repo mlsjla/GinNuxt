@@ -18,7 +18,7 @@
                 :inline="true"
                 :model="formData"
                 :rules="rules"
-                class="ml-5 flex flex-1 flex-col"
+                class="w-full flex flex-1 flex-col"
                 label-width="100px"
                 :size="formSize"
             >

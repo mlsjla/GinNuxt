@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from 'nuxt'
 import { ElementPlusResolver } from '@mlsjla/unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -49,7 +48,7 @@ export default defineNuxtConfig({
     ],
     app: {
     },
-    css: ["~/assets/scss/main.scss", "~/assets/scss/index.scss", "bootstrap-icons/font/bootstrap-icons.css"],
+    css: ["~/assets/scss/main.scss", "~/assets/scss/index.scss", "bootstrap-icons/font/bootstrap-icons.scss"],
     components: true,
     publicRuntimeConfig: {
         ...config
@@ -60,7 +59,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [
             AutoImport(autoImportOpts),
-            Components(vueComponentsOpts),
+            Components(vueComponentsOpts)
         ]
     },
     build: {

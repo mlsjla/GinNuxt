@@ -10,6 +10,7 @@
 /server/cmd/main/*
 !/server/cmd/main/main.go
 
+*web/pages/package/*
 g.sh
 .*
 *.DS_Store
