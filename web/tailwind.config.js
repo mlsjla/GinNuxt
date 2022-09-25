@@ -1,15 +1,21 @@
+import tailwindTypography from '@tailwindcss/typography'
+import daisyui from 'daisyui'
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        "./app.vue",
-        "./components/**/*.{vue,js}",
-        "./layouts/**/*.vue",
-        "./pages/**/*.vue",
-        "./plugins/**/*.{js,ts}",
+        `components/**/*.{vue,js}`,
+        `layouts/**/*.vue`,
+        `pages/**/*.vue`,
+        `composables/**/*.{js,ts}`,
+        `plugins/**/*.{js,ts}`,
+        `App.{js,ts,vue}`,
+        `app.{js,ts,vue}`
     ],
     theme: {
         colors: {
-            transparent: 'transparent',
-            current: '#0054a5',
+            'transparent': 'transparent',
+            'current': '#0054a5',
             'primary': '#0054a5',
             'white': '#ffffff',
             'purple': '#3f3cbb',
@@ -23,22 +29,21 @@ module.exports = {
         extend: {}
     },
     plugins: [
-        require('daisyui'),
-        require('@tailwindcss/typography'),
+        daisyui,
+        tailwindTypography,
     ],
     daisyui: {
         themes: [{
-                'mytheme': { // custom theme
-                    'primary': '#0054a5',
-                    'primary-focus': '#0054a5',
-                    'primary-content': '#ffffff',
-                    "neutral": "#3D4451",
-                    "accent": "#37CDBE",
-                    "base-100": "#f6f6f6",
-                    // other colors
-                }
+            'mytheme': { // custom theme
+                'primary': '#0054a5',
+                'primary-focus': '#0054a5',
+                'primary-content': '#ffffff',
+                "neutral": "#3D4451",
+                "accent": "#37CDBE",
+                "base-100": "#f6f6f6",
+                // other colors
             }
-        ],
+        }],
         styled: true,
         base: true,
         utils: true,

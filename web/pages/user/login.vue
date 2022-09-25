@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <h2 class="card-title">
                         <div class="logo flex flex-row justify-center items-center w-full">
-                            <h2>用户登录</h2>
+                            <h2 class="bg-green-500">用户登录</h2>
                         </div>
                     </h2>
 
@@ -15,7 +15,7 @@
                             <span class="label-text">用户名</span>
                         </label>
                         <label class="input-group input-group-xs">
-                            <span><i class="bi bi-person" style="font-size: 18px"></i></span>
+                            <span><i class="bi bi-person text-lg"></i></span>
                             <input
                                 v-model="formData.username"
                                 type="text"
@@ -29,7 +29,7 @@
                             <span class="label-text">密码</span>
                         </label>
                         <label class="input-group input-group-xs">
-                            <span><i class="bi bi-lock" style="font-size: 18px"></i></span>
+                            <span><i class="bi bi-lock  text-lg"></i></span>
                             <input
                                 v-model="formData.password"
                                 type="password"
@@ -59,6 +59,10 @@
                     </div>
 
                     <button @click="login" class="btn btn-primary">登录</button>
+
+                    <div class="list flex flex-row justify-between items-center">
+                        <NuxtLink to="/user/register" class="item font-medium">立即注册</NuxtLink>
+                    </div>
                 </div>
             </div>
         </div>
@@ -201,4 +205,5 @@ onMounted(() => {
 });
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+</style>

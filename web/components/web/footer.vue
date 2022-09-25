@@ -6,7 +6,7 @@
                 <a class="link link-hover">联系方式</a>
             </div>
             <div>
-                <p>Copyright © 2022 - All right reserved by 蓝牙</p>
+                <p>Copyright © 2022 - All right reserved by lanya <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备15034504号-3</a></p>
             </div>
         </footer>
     </div>
