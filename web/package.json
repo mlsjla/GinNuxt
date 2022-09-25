@@ -37,6 +37,7 @@
     "isbot": "^3.5.0",
     "markdown-it": "^13.0.1",
     "unenv": "^0.5.3",
+    "unplugin-element-plus": "^0.4.1",
     "validator": "^13.7.0"
   }
 }

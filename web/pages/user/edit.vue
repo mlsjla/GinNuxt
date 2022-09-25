@@ -71,10 +71,10 @@ const tabList = $ref([
         label: "个人设置",
         value: "edit",
     },
-    {
-        label: "修改密码",
-        value: "password",
-    },
+    // {
+    //     label: "修改密码",
+    //     value: "password",
+    // },
 ]);
 
 const formSize = $ref("default");
@@ -109,6 +109,7 @@ const  submitForm = async (formEl) => {
         }
     });
 }
+
 
 onMounted(() => {
     formData = userStore?.user ? {

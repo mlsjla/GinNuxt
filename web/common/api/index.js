@@ -10,6 +10,8 @@ import casbin from './casbin'
 import roleMenu from './roleMenu'
 import pub from './pub'
 import post from './post'
+import app from './app'
+import appLog from './appLog'
 
 export default {
     menu,
@@ -23,5 +25,7 @@ export default {
     casbin,
     roleMenu,
     pub,
-    post
+    post,
+    app,
+    appLog
 }

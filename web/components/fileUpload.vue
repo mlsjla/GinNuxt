@@ -1,7 +1,15 @@
 <template>
     <div class="flex flex-col">
-        <el-upload name="file[]" :action="uploadURL" :headers="headers" class="flex image-uploader" :on-success="uploadSuccess" :auto-upload="true" :show-file-list="true">
-            <el-icon class="image-uploader-icon"><Plus /></el-icon>
+        <el-upload name="file[]" :action="uploadURL" :headers="headers" class="flex" 
+            :on-success="uploadSuccess" :auto-upload="true" 
+            :show-file-list="false"
+        >
+            <el-button type="primary">点击上传</el-button>
+            <template #tip>
+                <div class="el-upload__tip">
+                    
+                </div>
+            </template>
         </el-upload>
     </div>
 </template>

@@ -31,6 +31,8 @@ export const useUserStore = defineStore('user', {
         },
         reset() {
             // `this` is the store instance
+            this.user = {}
+            this.token = ""
         },
     },
 })

@@ -35,7 +35,7 @@ const request = async (url, options) => {
                     token: undefined,
                 });
                 const router = useRouter();
-                router.push('/admin/user/login')
+                router.push('/user/login')
             }
         }
     })

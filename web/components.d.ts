@@ -28,6 +28,7 @@ declare module '@vue/runtime-core' {
     'ArticleView-[id]': typeof import('./pages/article/view/[id].vue')['default']
     Default: typeof import('./layouts/default.vue')['default']
     DefaultNossr: typeof import('./layouts/default-nossr.vue')['default']
+    ElAlert: typeof import('element-plus')['ElAlert']
     ElButton: typeof import('element-plus')['ElButton']
     ElCascader: typeof import('element-plus')['ElCascader']
     ElCheckbox: typeof import('element-plus')['ElCheckbox']
@@ -56,6 +57,7 @@ declare module '@vue/runtime-core' {
     PackageMiniprogram: typeof import('./pages/package/miniprogram/index.vue')['default']
     PackageMiniprogramEdit: typeof import('./pages/package/miniprogram/edit.vue')['default']
     PackageMiniprogramMiniprogram: typeof import('./pages/package/miniprogram/miniprogram.vue')['default']
+    PackageMiniprogramUpload: typeof import('./pages/package/miniprogram/upload.vue')['default']
     RoleSelect: typeof import('./components/role-select.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -68,5 +70,9 @@ declare module '@vue/runtime-core' {
     'UserU-[id]': typeof import('./pages/user/u-[id].vue')['default']
     WebFooter: typeof import('./components/web/footer.vue')['default']
     WebHeader: typeof import('./components/web/header.vue')['default']
+    WebMenu: typeof import('./components/web/menu.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/lib')['ElLoadingDirective']
   }
 }

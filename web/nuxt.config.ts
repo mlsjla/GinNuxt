@@ -48,7 +48,7 @@ export default defineNuxtConfig({
     ],
     app: {
     },
-    css: ["~/assets/scss/main.scss", "~/assets/scss/index.scss", "bootstrap-icons/font/bootstrap-icons.scss"],
+    css: ["~/assets/scss/main.scss", "~/assets/scss/index.scss", "bootstrap-icons/font/bootstrap-icons.css"],
     components: true,
     publicRuntimeConfig: {
         ...config
@@ -59,7 +59,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [
             AutoImport(autoImportOpts),
-            Components(vueComponentsOpts)
+            Components(vueComponentsOpts),
         ]
     },
     build: {
