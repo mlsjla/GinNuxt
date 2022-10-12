@@ -109,9 +109,9 @@ func (e *AttachmentSrv) UploadFile(ctx *gin.Context, header *multipart.FileHeade
 	hander.Read(head)
 
 	kind, _ := filetype.Match(head)
-	if kind == filetype.Unknown {
-		return file, err
-	}
+	// if kind == filetype.Unknown {
+	// 	return file, err
+	// }
 
 	mime := strings.Split(kind.MIME.Value, "/")
 

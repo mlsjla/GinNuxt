@@ -83,7 +83,10 @@ func (a *UserSrv) Create(ctx context.Context, item schema.User) (*schema.IDResul
 	}
 	item.Password = password
 	// item.Password = hash.SHA1String(password)
-	item.ID = snowflake.MustID()
+	if item.ID < 1 {
+		item.ID = snowflake.MustID()
+	}
+
 	err = a.TransRepo.Exec(ctx, func(ctx context.Context) error {
 		for _, urItem := range item.UserRoles {
 			urItem.ID = snowflake.MustID()

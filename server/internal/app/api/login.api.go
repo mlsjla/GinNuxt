@@ -2,6 +2,8 @@ package api
 
 import (
 	"fmt"
+	"io/ioutil"
+	"net/http"
 
 	"github.com/dchest/captcha"
 	"github.com/gin-gonic/gin"
@@ -22,9 +24,79 @@ import (
 var LoginSet = wire.NewSet(wire.Struct(new(LoginAPI), "*"))
 
 type LoginAPI struct {
+	UserSrv     *service.UserSrv
 	LoginSrv    *service.LoginSrv
 	MenuSrv     *service.MenuSrv
 	RoleMenuSrv *service.RoleMenuSrv
+}
+
+func (a *LoginAPI) WechatRegister(c *gin.Context) {
+	token := c.Param("token")
+	if token == "" {
+		ginx.ResError(c, errors.New400Response("token not empty"))
+		return
+	}
+
+	resp, err := http.Get("https://www.zhanmishu.com/plugin.php?id=zhanmishu_wechat:index&getUser=yes&token=" + token + "&openKey=a7da9591c7a0a4e82f407b086bbce32c")
+	if err != nil {
+		ginx.ResError(c, err)
+		return
+	}
+	defer resp.Body.Close()
+	body, _ := ioutil.ReadAll(resp.Body)
+	userStr := jsoniter.Get(body, "data").ToString()
+
+	ctx := c.Request.Context()
+	var item schema.User
+
+	item.ID = jsoniter.Get([]byte(userStr), "uid").ToUint64()
+	if item.ID < 1 {
+		ginx.ResError(c, errors.New400Response("no user"))
+		return
+	}
+	dbUser, err := a.UserSrv.Get(ctx, item.ID)
+	fmt.Println("dbUser", dbUser)
+	if err == nil {
+		tokenInfo, err := a.LoginSrv.GenerateToken(ctx, a.formatTokenUserID(dbUser.ID, dbUser.Username))
+		if err != nil {
+			ginx.ResError(c, err)
+			return
+		}
+		
+
+		ctx = logger.NewUserIDContext(ctx, dbUser.ID)
+		ctx = logger.NewUserNameContext(ctx, dbUser.Username)
+		ctx = logger.NewTagContext(ctx, "__login__")
+		logger.WithContext(ctx).Infof("login")
+
+		ginx.ResSuccess(c, tokenInfo)
+		return
+	}
+
+	item.Username = jsoniter.Get([]byte(userStr), "username").ToString()
+	item.Realname = item.Username
+	item.Email = jsoniter.Get([]byte(userStr), "email").ToString()
+	item.Status = 1
+	item.Nickname = item.Username
+
+	_, err = a.UserSrv.Create(ctx, item)
+	if err != nil {
+		ginx.ResError(c, err)
+		return
+	}
+
+	tokenInfo, err := a.LoginSrv.GenerateToken(ctx, a.formatTokenUserID(item.ID, item.Username))
+	if err != nil {
+		ginx.ResError(c, err)
+		return
+	}
+
+	ctx = logger.NewUserIDContext(ctx, item.ID)
+	ctx = logger.NewUserNameContext(ctx, item.Username)
+	ctx = logger.NewTagContext(ctx, "__login__")
+	logger.WithContext(ctx).Infof("login")
+
+	ginx.ResSuccess(c, tokenInfo)
 }
 
 func (a *LoginAPI) SendSms(c *gin.Context) {

@@ -41,7 +41,7 @@ Debug = true
 # 模型配置文件(也可以启动服务时使用-m指定)
 Model = ""
 # 是否启用定期自动加载策略
-AutoLoad = false
+AutoLoad = true
 # 定期自动加载策略时间间隔（单位秒）
 AutoLoadInternal = 60
 

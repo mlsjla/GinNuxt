@@ -1,0 +1,27 @@
+name: AppLog
+comment: APPLog
+fields:
+  - name: UserId
+    type: uint64
+    comment: "创建用户 id"
+    required: true
+    binding_options: ""
+    gorm_options: "index"
+  - name: Appid
+    type: string
+    comment: Appid
+    required: true
+    binding_options: ""
+    gorm_options: "string;index"
+  - name: Data
+    type: string
+    comment: 详情
+    required: false
+    binding_options: ""
+    gorm_options: "type:text"
+  - name: Ip
+    type: string
+    comment: ip
+    required: false
+    binding_options: ""
+    gorm_options: "size:45;index"
