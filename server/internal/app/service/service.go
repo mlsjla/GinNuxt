@@ -17,6 +17,4 @@ var ServiceSet = wire.NewSet(
 	MobileCodeSet,
 	CasbinRuleSet,
 	RoleMenuSet,
-	AppSet,
-	AppLogSet,
 ) // end

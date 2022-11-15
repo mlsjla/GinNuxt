@@ -8,8 +8,6 @@ package app
 
 import (
 	"github.com/mlsjla/gin-nuxt/server/internal/app/api"
-	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/app"
-	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/app_log"
 	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/attachment"
 	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/casbin_rule"
 	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/category"
@@ -193,27 +191,6 @@ func BuildInjector() (*Injector, func(), error) {
 	roleMenuAPI := &api.RoleMenuAPI{
 		RoleMenuSrv: roleMenuSrv,
 	}
-	appRepo := &app.AppRepo{
-		DB: db,
-	}
-	appSrv := &service.AppSrv{
-		TransRepo: trans,
-		AppRepo:   appRepo,
-	}
-	appAPI := &api.AppAPI{
-		AppSrv: appSrv,
-	}
-	appLogRepo := &app_log.AppLogRepo{
-		DB: db,
-	}
-	appLogSrv := &service.AppLogSrv{
-		TransRepo:  trans,
-		AppLogRepo: appLogRepo,
-	}
-	appLogAPI := &api.AppLogAPI{
-		AppLogSrv: appLogSrv,
-		AppSrv:    appSrv,
-	}
 	routerRouter := &router.Router{
 		Auth:           auther,
 		CasbinEnforcer: syncedEnforcer,
@@ -231,8 +208,6 @@ func BuildInjector() (*Injector, func(), error) {
 		CasbinRuleAPI:  casbinRuleAPI,
 		UserSrv:        userSrv,
 		RoleMenuAPI:    roleMenuAPI,
-		AppAPI:         appAPI,
-		AppLogAPI:      appLogAPI,
 	}
 	engine := InitGinEngine(routerRouter)
 	injector := &Injector{

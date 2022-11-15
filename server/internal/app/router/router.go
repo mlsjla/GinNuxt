@@ -37,8 +37,6 @@ type Router struct {
 	CasbinRuleAPI  *api.CasbinRuleAPI
 	UserSrv        *service.UserSrv
 	RoleMenuAPI    *api.RoleMenuAPI
-	AppAPI         *api.AppAPI
-	AppLogAPI      *api.AppLogAPI
 } // end
 
 func (a *Router) Register(app *gin.Engine) error {
@@ -230,28 +228,6 @@ func (a *Router) RegisterAPI(app *gin.Engine) {
 			gRoleMenu.DELETE(":id", a.RoleMenuAPI.Delete)
 
 		}
-
-		gApp := v1.Group("apps")
-		{
-			gApp.GET("", a.AppAPI.Query)
-			gApp.GET(":id", a.AppAPI.Get)
-			gApp.POST("", a.AppAPI.Create)
-			gApp.PUT(":id", a.AppAPI.Update)
-			gApp.DELETE(":id", a.AppAPI.Delete)
-
-		}
-
-		gAppLog := v1.Group("app-logs")
-		{
-			gAppLog.GET("", a.AppLogAPI.Query)
-			gAppLog.GET(":id", a.AppLogAPI.Get)
-			gAppLog.POST("", a.AppLogAPI.Create)
-			gAppLog.PUT(":id", a.AppLogAPI.Update)
-			gAppLog.DELETE(":id", a.AppLogAPI.Delete)
-
-		}
-		v1.POST("/app-logs.preview/:id", a.AppLogAPI.Preview)
-		v1.POST("/app-logs.upload/:id", a.AppLogAPI.Upload)
 
 	} // v1 end
 }

@@ -7,8 +7,6 @@ import (
 	"gorm.io/gorm"
 
 	"github.com/mlsjla/gin-nuxt/server/internal/app/config"
-	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/app"
-	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/app_log"
 	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/attachment"
 	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/casbin_rule"
 	"github.com/mlsjla/gin-nuxt/server/internal/app/dao/category"
@@ -38,8 +36,6 @@ var RepoSet = wire.NewSet(
 	mobile_code.MobileCodeSet,
 	casbin_rule.CasbinRuleSet,
 	role_menu.RoleMenuSet,
-	app.AppSet,
-	app_log.AppLogSet,
 ) // end
 
 // Define repo type alias
@@ -57,8 +53,6 @@ type (
 	MobileCodeRepo = mobile_code.MobileCodeRepo
 	CasbinRuleRepo = casbin_rule.CasbinRuleRepo
 	RoleMenuRepo   = role_menu.RoleMenuRepo
-	AppRepo        = app.AppRepo
-	AppLogRepo     = app_log.AppLogRepo
 ) // end
 
 // Auto migration for given models
@@ -80,7 +74,5 @@ func AutoMigrate(db *gorm.DB) error {
 		new(mobile_code.MobileCode),
 		new(casbin_rule.CasbinRule),
 		new(role_menu.RoleMenu),
-		new(app.App),
-		new(app_log.AppLog),
 	) // end
 }

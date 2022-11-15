@@ -16,6 +16,4 @@ var APISet = wire.NewSet(
 	MobileCodeSet,
 	CasbinRuleSet,
 	RoleMenuSet,
-	AppSet,
-	AppLogSet,
 ) // end
